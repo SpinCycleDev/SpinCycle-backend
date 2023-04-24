@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class User(models.Model):
-    USER_CUSTOMER = 'cutomer'
+    USER_CUSTOMER = 'customer'
     USER_SERVICE_PROVIDER = 'service_provider'
     USER_DRIVER = 'driver'
     USER_TYPE_CHOICES = (
@@ -19,3 +19,11 @@ class User(models.Model):
     email = models.EmailField()
     phone_number = models.CharField(max_length=20)
     user_type = models.CharField(max_length=20, choices=USER_TYPE_CHOICES, default=USER_CUSTOMER)
+
+# Customer Class
+
+class Customer(models.Model):
+    user = models.ForeignKey(User, on_delete=models.PROTECT)
+    laundry_preferences = models.JSONField()
+    # order_history = order/model
+    
