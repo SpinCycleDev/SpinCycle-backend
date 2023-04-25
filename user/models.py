@@ -89,6 +89,15 @@ class Address(models.Model):
     latitude = models.DecimalField(max_digits=9, decimal_places=6)
     longitude = models.DecimalField(max_digits=9, decimal_places=6)
 
+# Driver Class
+class Driver(models.Model):
+    user_id = models.ForeignKey(User, on_delete=models.PROTECT)
+    vehicle_type = models.CharField(max_length=20)
+    license_plate = models.CharField(max_length=20)
+    license_number = models.CharField(max_length=20)
+    rating = models.DecimalField(max_digits=2, decimal_places=1)
+    driver_picture = models.ImageField(upload_to='driver_pictures/', default='driver_pictures/default.jpg')
+
 # Customer Class
 class Customer(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.PROTECT)
