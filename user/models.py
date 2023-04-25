@@ -85,7 +85,7 @@ class Address(models.Model):
     # Maybe? vvv
     state = models.CharField(max_length=2, choices=[(state.name, state.value) for state in StateChoices])
     zip_code = models.CharField(max_length=20)
-    country = models.CountryField()
+    country = CountryField() 
     latitude = models.DecimalField(max_digits=9, decimal_places=6)
     longitude = models.DecimalField(max_digits=9, decimal_places=6)
 
