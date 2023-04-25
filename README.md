@@ -1,7 +1,3 @@
 # SpinCycle-backend
 
-# This is a test :o
-
-# SpinCycle-backend
-
-<!-- tim test -->
+<a href="https://spincycle.io/">Check out SpinCycle!</a>
